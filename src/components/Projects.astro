@@ -1,39 +1,62 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import PHP from "./icons/PHP.astro"
+import CSS from "./icons/CSS.astro"
+import HTML from "./icons/HTML.astro"
+import ReactNative from "./icons/ReactNative.astro"
+import ExpressJS from "./icons/ExpressJs.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#f0db4f] text-black",
+    icon: JavaScript,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  PHP: {
+    name: "PHP",
+    class: "bg-[#8892BF] text-white",
+    icon: PHP,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#2965f1] text-white",
+    icon: CSS,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#f06529] text-white",
+    icon: HTML,
+  },
+  REACT_NATIVE: {
+    name: "React Native",
+    class: "bg-[#000000] text-white",
+    icon: ReactNative,
+  },
+  EXPRESSJS: {
+    name: "ExpressJS",
+    class: "bg-[#000000] text-white",
+    icon: ExpressJS,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "DashteinBoard - ERP contable + POS",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Dashboard ERP contable para empresas con facturación electrónica. Incluye gráficos, tablas, exportación de datos a Excel y sistema de ventas POS. Creado con HTML, CSS, JS y PHP. ",
+    link: "https://dashboardventas1.000webhostapp.com/",
+    image: "/projects/dashteinboard.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT,TAGS.PHP],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "PanamaBeerClub - App Móvil para entregar pedidos",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "App móvil para entregar pedidos de cervezas artesanales en Panamá. Integración con la aplicación web de PanamaBeerClub. Creado con React Native y Express. ",
+    github: "https://github.com/Bryan0502/APP_DS9-FRONTEND",
+    image: "/projects/appmovil.webp",
+    tags: [TAGS.REACT_NATIVE, TAGS.EXPRESSJS],
   },
 ]
 ---
@@ -44,7 +67,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt="Imagen del Proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
