@@ -1,11 +1,19 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
+
 const EXPERIENCIE = [
   {
-    date: "Octubre 2023 - Marzo 2024",
+    date: "2024 - Presente",
+    title: "Ingeniero de Software",
+    company: "Malek Seguros",
+    description: "Diseñé y mantuve pipelines ETL en Azure con Python para procesamiento automatizado de datos multi-fuente. Implementé infraestructura serverless escalable reduciendo costos operativos en 40%. Construí dashboards en Power BI para análisis de negocio y automaticé workflows con Power Automate eliminando 15+ horas semanales de trabajo manual.",
+    link: "#proyectos",
+  },
+  {
+    date: "2023 - 2024",
     title: "Desarrollador Web Full Stack",
-    company: "CINEMI, UTP",
-    description: "Responsable de la creación, diseño y desarrollo completo del front-end de la página web. Colaboré estrechamente con el equipo de investigación para capturar y cumplir con los requisitos técnicos y funcionales del proyecto.",
+    company: "CINEMI, Universidad Tecnológica de Panamá",
+    description: "Lideré desarrollo full-cycle de aplicación web institucional desde levantamiento de requisitos hasta deployment. Diseñé e implementé frontend responsivo y colaboré con equipo de investigación para cumplir objetivos técnicos del proyecto.",
     link: "http://proyectope-cinemi.utp.ac.pa/",
   },
 ]
@@ -14,7 +22,7 @@ const EXPERIENCIE = [
 <ol class="relative mt-16">
   {
     EXPERIENCIE.map((experiencie) => (
-      <li class="">
+      <li>
         <ExperienceItem {...experiencie} />
       </li>
     ))
