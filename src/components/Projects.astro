@@ -2,115 +2,161 @@
 import GitHub from "./icons/GitHub.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
-import JavaScript from "./icons/JavaScript.astro"
-import PHP from "./icons/PHP.astro"
-import CSS from "./icons/CSS.astro"
-import HTML from "./icons/HTML.astro"
-import ReactNative from "./icons/ReactNative.astro"
-import ExpressJS from "./icons/ExpressJs.astro"
+import Azure from "./icons/Azure.astro"
+import Terraform from "./icons/Terraform.astro"
+import Python from "./icons/Python.astro"
+import Kubernetes from "./icons/Kubernetes.astro"
+import NextJS from "./icons/NextJS.astro"
+import Go from "./icons/Go.astro"
 
 const TAGS = {
-  JAVASCRIPT: {
-    name: "JavaScript",
-    class: "bg-[#f0db4f] text-black",
-    icon: JavaScript,
+  AZURE: {
+    name: "Azure",
+    class: "bg-[#0078D4] text-white",
+    icon: Azure,
   },
-  PHP: {
-    name: "PHP",
-    class: "bg-[#8892BF] text-white",
-    icon: PHP,
+  TERRAFORM: {
+    name: "Terraform",
+    class: "bg-[#7B42BC] text-white",
+    icon: Terraform,
   },
-  CSS: {
-    name: "CSS",
-    class: "bg-[#2965f1] text-white",
-    icon: CSS,
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#3776AB] text-white",
+    icon: Python,
   },
-  HTML: {
-    name: "HTML",
-    class: "bg-[#f06529] text-white",
-    icon: HTML,
+  KUBERNETES: {
+    name: "Kubernetes",
+    class: "bg-[#326CE5] text-white",
+    icon: Kubernetes,
   },
-  REACT_NATIVE: {
-    name: "React Native",
+  NEXTJS: {
+    name: "Next.js",
     class: "bg-[#000000] text-white",
-    icon: ReactNative,
+    icon: NextJS,
   },
-  EXPRESSJS: {
-    name: "ExpressJS",
-    class: "bg-[#000000] text-white",
-    icon: ExpressJS,
+  GO: {
+    name: "Go",
+    class: "bg-[#00ADD8] text-white",
+    icon: Go,
   },
 }
+
 const PROJECTS = [
   {
-    title: "DashteinBoard - ERP contable + POS",
+    title: "Robot Malek - Plataforma de Datos Empresarial",
     description:
-      "Dashboard ERP contable para empresas con facturación electrónica. Incluye gráficos, tablas, exportación de datos a Excel y sistema de ventas POS. Creado con HTML, CSS, JS y PHP. ",
-    link: "https://dashboardventas1.000webhostapp.com/",
-    image: "/projects/dashteinboard.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT,TAGS.PHP],
+      "Arquitectura serverless ETL automatizada en Azure que procesa datos de múltiples fuentes (Excel, APIs, ERP) eliminando procesamiento manual y delays de horas en reportes de negocio.",
+    problem: "La empresa procesaba datos manualmente de múltiples fuentes causando delays de horas y errores costosos en reportes de negocio.",
+    solution: "Diseñé arquitectura serverless con Azure Data Lake Gen2 como storage central, Azure Functions para procesamiento ETL automatizado, y Azure SQL DW para analytics. Implementé lifecycle management para optimización de costos (Hot → Cool → Archive).",
+    results: [
+      "Procesa 10GB+ de datos diarios con 99.9% uptime",
+      "Redujo costos de storage en 40% con lifecycle policies",
+      "Automatizó flujos eliminando 15+ horas semanales de trabajo manual"
+    ],
+    link: "#",
+    image: "/projects/robot-malek.webp",
+    tags: [TAGS.TERRAFORM, TAGS.AZURE, TAGS.PYTHON],
+    featured: true,
   },
   {
-    title: "PanamaBeerClub - App Móvil para entregar pedidos",
+    title: "Aplicación de Microservicios en AKS",
     description:
-      "App móvil para entregar pedidos de cervezas artesanales en Panamá. Integración con la aplicación web de PanamaBeerClub. Creado con React Native y Express. ",
-    github: "https://github.com/Bryan0502/APP_DS9-FRONTEND",
-    image: "/projects/appmovil.webp",
-    tags: [TAGS.REACT_NATIVE, TAGS.EXPRESSJS],
+      "Cluster Kubernetes en Azure con auto-scaling horizontal, frontend Next.js + TypeScript, backend Go + JWT, y pipeline CI/CD automatizado con GitLab.",
+    problem: "Necesidad de aplicación escalable y resiliente que maneje picos de tráfico sin intervención manual.",
+    solution: "Implementé cluster en Azure Kubernetes Service (AKS) con Helm para package management, HPA para auto-scaling, API Gateway para routing, y Key Vault para secrets management seguro. Pipeline CI/CD con GitLab automatiza despliegues.",
+    results: [
+      "Auto-scaling horizontal para manejar picos de tráfico",
+      "Despliegues automáticos con zero-downtime",
+      "Secrets management seguro con Azure Key Vault"
+    ],
+    image: "/projects/aks-microservices.webp",
+    tags: [TAGS.TERRAFORM, TAGS.AZURE, TAGS.KUBERNETES, TAGS.NEXTJS, TAGS.GO],
+    featured: false,
+  },
+  {
+    title: "Automatización Documental con OCR",
+    description:
+      "Workflow automatizado con Azure Document Intelligence y modelos custom de OCR para procesamiento inteligente de facturas y documentos sin intervención manual.",
+    problem: "Procesamiento manual de facturas y documentos consumía tiempo valioso y generaba errores de transcripción.",
+    solution: "Construí workflow automatizado con Azure Document Intelligence para OCR, Azure Functions para procesamiento, y N8N para orquestación. Usé modelos custom para documentos específicos de la empresa.",
+    results: [
+      "Procesa 500 documentos/mes",
+      "Extracción y validación de datos con alta precisión",
+      "Reducción de 80% en tiempo de procesamiento"
+    ],
+    image: "/projects/doc-automation.webp",
+    tags: [TAGS.AZURE, TAGS.PYTHON],
+    featured: false,
   },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, problem, solution, results, tags, link, featured }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Imagen del Proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img 
+        alt={`Diagrama de arquitectura - ${title}`}
+        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" 
+        loading="lazy" 
+        src={image} 
+      />
     </div>
   </div>
 
   <div class="w-full md:w-1/2 md:max-w-lg">
     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {featured && <span class="text-yellow-500 mr-2">⭐</span>}
       {title}
     </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
+    
+    <div class="flex flex-wrap mt-2 gap-2">
+      {tags.map((tag) => (
+        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+          <tag.icon class="size-4" />
+          {tag.name}
+        </span>
+      ))}
+    </div>
+
+    <div class="mt-4 space-y-4">
+      <div>
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-200 mb-1">El Problema:</h4>
+        <p class="text-sm text-gray-700 dark:text-gray-400">{problem}</p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-200 mb-1">La Solución:</h4>
+        <p class="text-sm text-gray-700 dark:text-gray-400">{solution}</p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-200 mb-1">Resultados:</h4>
+        <ul class="space-y-1">
+          {results.map((result) => (
+            <li class="text-sm text-gray-700 dark:text-gray-400 flex items-start">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>{result}</span>
             </li>
           ))}
         </ul>
-
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
+      </div>
     </div>
+
+    <footer class="flex items-center justify-start mt-6 gap-x-4">
+      {link && link !== "#" && (
+        <LinkButton href={link}>
+          <Link class="size-4" />
+          Ver Diagrama
+        </LinkButton>
+      )}
+
+    </footer>
   </div>
 </article>
     ))
   }
 </div>
-
-
-

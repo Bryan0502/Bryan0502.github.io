@@ -4,13 +4,14 @@ import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import Briefcase from "./icons/Briefcase.astro"
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/midudev.webp"
+      src="/me.png"
       alt={personalImageAlt}
     />
     <a
@@ -22,19 +23,26 @@ import SocialPill from "@/components/SocialPill.astro"
       <Badge>Disponible para trabajar</Badge>
     </a>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hey, soy Bryan Avila
-  </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    +2 años de experiencia. <strong
-      >Estudiante de Desarrollo de Software</strong
-    > de Panamá, Panamá 🇵🇦. Especializado en el desarrollo de aplicaciones web
-    únicas.
-  </p>
+    <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+      Hola, soy Bryan Avila 👋
+    </h1>
+
+    <p class="mt-6 text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">
+      Software Engineer | Azure Cloud Architect
+      Especializado en ETL, Serverless y Kubernetes
+    </p>
+
+    <p class="mt-4 text-base sm:text-lg text-gray-700 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
+      Construyo infraestructuras escalables en Azure que procesan <strong>10GB+</strong> de datos diarios. 
+      He reducido costos cloud en <strong>40%</strong> y automatizado workflows que ahorran <strong>20+ horas</strong> semanales.
+    </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="public/cv/BryanAvilaCVEspanol.pdf">
+      <Briefcase class="size-4" />
+      Ver CV
+    </SocialPill>
+  </nav>
+
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:br.avila05@gmail.com">
       <MailIcon class="size-4" />
